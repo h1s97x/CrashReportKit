@@ -1,0 +1,22 @@
+name: crash_reporter_kit
+description: A comprehensive crash reporting toolkit for Flutter with automatic crash detection and reporting.
+version: 1.0.0
+homepage: https://github.com/h1s97x/CrashReportKit
+
+environment:
+  sdk: '>=3.0.0 <4.0.0'
+  flutter: ">=3.3.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^1.1.0
+  path: ^1.8.3
+  path_provider: ^2.1.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^3.0.0
+
+flutter:
