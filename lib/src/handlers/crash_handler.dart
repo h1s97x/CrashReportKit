@@ -6,6 +6,31 @@ import '../storage/crash_storage.dart';
 import '../reporters/crash_reporter.dart';
 
 /// 崩溃处理器
+///
+/// 负责捕获 Flutter 和平台错误，并将其存储和上报。
+///
+/// ## 功能
+///
+/// - 捕获 Flutter 错误（通过 FlutterError.onError）
+/// - 捕获平台错误（通过 PlatformDispatcher.onError）
+/// - 自动存储崩溃报告
+/// - 自动上报未上报的崩溃
+/// - 清理旧崩溃报告
+///
+/// ## 内部使用
+///
+/// 通常不需要直接使用此类，而是通过 [CrashReporterKit] 的 API 使用。
+///
+/// ## 示例
+///
+/// ```dart
+/// // 通过 CrashReporterKit 初始化时自动创建
+/// await CrashReporterKit.init(
+///   enabled: true,
+///   autoReport: true,
+///   reportUrl: 'https://crash.example.com/api/report',
+/// );
+/// ```
 class CrashHandler {
   CrashHandler({
     required this.config,

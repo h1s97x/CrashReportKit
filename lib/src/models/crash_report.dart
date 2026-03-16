@@ -1,7 +1,41 @@
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 
-/// 崩溃报告
+/// 崩溃报告模型
+///
+/// 包含崩溃的详细信息，包括错误、堆栈跟踪、设备信息和应用状态。
+///
+/// ## 属性
+///
+/// - [id]: 唯一标识符
+/// - [error]: 错误对象
+/// - [stackTrace]: 堆栈跟踪信息
+/// - [timestamp]: 崩溃发生的时间
+/// - [appVersion]: 应用版本号
+/// - [buildNumber]: 构建号
+/// - [deviceInfo]: 设备信息
+/// - [appState]: 应用状态
+/// - [userId]: 用户 ID
+/// - [isReported]: 是否已上报
+///
+/// ## 使用示例
+///
+/// ```dart
+/// // 获取所有崩溃报告
+/// final crashes = await CrashReporterKit.getAllCrashes();
+///
+/// // 访问崩溃信息
+/// for (final crash in crashes) {
+///   print('ID: ${crash.id}');
+///   print('Error: ${crash.error}');
+///   print('Time: ${crash.timestamp}');
+///   print('Device: ${crash.deviceInfo.os}');
+///   print('Reported: ${crash.isReported}');
+/// }
+///
+/// // 转换为 JSON
+/// final json = crash.toJson();
+/// ```
 class CrashReport {
   CrashReport({
     required this.id,
@@ -105,7 +139,32 @@ class CrashReport {
   }
 }
 
-/// 设备信息
+/// 设备信息模型
+///
+/// 包含设备的硬件和系统信息。
+///
+/// ## 属性
+///
+/// - [os]: 操作系统名称（Android、iOS、Windows、Linux、macOS、Web）
+/// - [osVersion]: 操作系统版本
+/// - [model]: 设备型号
+/// - [brand]: 设备品牌
+/// - [isPhysicalDevice]: 是否是物理设备
+/// - [screenSize]: 屏幕尺寸
+/// - [memory]: 内存大小
+///
+/// ## 使用示例
+///
+/// ```dart
+/// // 获取当前设备信息
+/// final deviceInfo = await DeviceInfo.current();
+/// print('OS: ${deviceInfo.os}');
+/// print('Version: ${deviceInfo.osVersion}');
+/// print('Model: ${deviceInfo.model}');
+///
+/// // 转换为 JSON
+/// final json = deviceInfo.toJson();
+/// ```
 class DeviceInfo {
   DeviceInfo({
     required this.os,

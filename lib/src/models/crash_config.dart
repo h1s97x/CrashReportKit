@@ -1,4 +1,38 @@
-/// 崩溃报告配置
+/// 崩溃报告配置类
+///
+/// 用于配置 CrashReporterKit 的行为。
+///
+/// ## 配置选项
+///
+/// - [enabled]: 是否启用崩溃报告（默认：true）
+/// - [autoReport]: 是否自动上报崩溃（默认：true）
+/// - [reportUrl]: 远程上报的 URL（默认：null）
+/// - [collectDeviceInfo]: 是否收集设备信息（默认：true）
+/// - [collectAppState]: 是否收集应用状态（默认：true）
+/// - [maxStoredCrashes]: 最多存储的崩溃数量（默认：10）
+/// - [reportTimeout]: 上报超时时间（默认：30 秒）
+/// - [enableInDebug]: 是否在调试模式启用（默认：false）
+/// - [userId]: 用户 ID（可选）
+/// - [appVersion]: 应用版本号（可选）
+/// - [buildNumber]: 构建号（可选）
+///
+/// ## 使用示例
+///
+/// ```dart
+/// final config = CrashConfig(
+///   enabled: true,
+///   autoReport: true,
+///   reportUrl: 'https://crash.example.com/api/report',
+///   collectDeviceInfo: true,
+///   collectAppState: true,
+///   maxStoredCrashes: 20,
+///   reportTimeout: Duration(seconds: 60),
+///   enableInDebug: false,
+///   userId: 'user_123',
+///   appVersion: '1.0.0',
+///   buildNumber: '1',
+/// );
+/// ```
 class CrashConfig {
   const CrashConfig({
     this.enabled = true,

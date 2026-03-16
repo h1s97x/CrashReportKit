@@ -6,6 +6,48 @@ import '../models/crash_report.dart';
 import '../models/crash_config.dart';
 
 /// 崩溃上报器
+///
+/// 负责将崩溃报告上报到远程服务器。
+///
+/// ## 功能
+///
+/// - 通过 HTTP POST 上报单个崩溃
+/// - 批量上报多个崩溃
+/// - 自动超时控制
+/// - 错误处理和重试
+///
+/// ## 上报格式
+///
+/// 崩溃报告以 JSON 格式通过 HTTP POST 发送到配置的 URL。
+///
+/// ```json
+/// {
+///   "id": "1709914800000",
+///   "error": "Exception: Something went wrong",
+///   "stackTrace": "...",
+///   "timestamp": "2026-03-16T12:00:00.000Z",
+///   "appVersion": "1.0.0",
+///   "buildNumber": "1",
+///   "deviceInfo": {...},
+///   "appState": {...},
+///   "userId": "user_123",
+///   "isReported": false
+/// }
+/// ```
+///
+/// ## 内部使用
+///
+/// 通常不需要直接使用此类，而是通过 [CrashReporterKit] 的 API 使用。
+///
+/// ## 示例
+///
+/// ```dart
+/// // 通过 CrashReporterKit 自动上报
+/// await CrashReporterKit.init(
+///   reportUrl: 'https://crash.example.com/api/report',
+///   autoReport: true,
+/// );
+/// ```
 class CrashReporter {
   CrashReporter(this.config);
 

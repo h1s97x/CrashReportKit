@@ -4,7 +4,33 @@ import 'package:path/path.dart' as path;
 import 'package:path_provider/path_provider.dart';
 import '../models/crash_report.dart';
 
-/// 崩溃存储
+/// 崩溃存储类
+///
+/// 负责本地存储和管理崩溃报告。
+///
+/// ## 存储位置
+///
+/// 崩溃报告存储在应用文档目录的 `crashes/` 文件夹中，每个崩溃报告为一个 JSON 文件。
+///
+/// ## 功能
+///
+/// - 保存崩溃报告到本地文件系统
+/// - 读取和查询崩溃报告
+/// - 标记崩溃为已上报
+/// - 清理旧崩溃报告
+/// - 删除指定的崩溃报告
+///
+/// ## 内部使用
+///
+/// 通常不需要直接使用此类，而是通过 [CrashReporterKit] 的 API 使用。
+///
+/// ## 示例
+///
+/// ```dart
+/// // 通过 CrashReporterKit 自动管理
+/// final crashes = await CrashReporterKit.getAllCrashes();
+/// await CrashReporterKit.clearAllCrashes();
+/// ```
 class CrashStorage {
   static const String _crashDir = 'crashes';
   Directory? _directory;
