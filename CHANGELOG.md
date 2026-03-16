@@ -1,13 +1,34 @@
-# Changelog
+# Changelog | 更新日志
 
-All notable changes to this project will be documented in this file.
+## Table of Contents | 目录
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+- [English](#english)
+- [中文](#中文)
 
-## [1.0.0] - 2024-03-08
+---
 
-### Added
+## English
+
+### [1.0.1] - 2026-03-16
+
+#### Added
+
+- Bilingual changelog with index
+- Automated pub.dev publishing workflow via GitHub Actions
+- Version bump to 1.0.1
+
+#### Changed
+
+- Enhanced documentation structure with dual language support
+
+#### Fixed
+
+- Documentation improvements
+
+### [1.0.0] - 2026-03-08
+
+#### Added
+
 - Initial release of crash_reporter_kit
 - Automatic crash detection and reporting
 - Flutter error handling with FlutterError.onError
@@ -26,7 +47,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - User ID tracking
 - App version and build number tracking
 
-### Features
+#### Features
+
 - **CrashReport**: Comprehensive crash report model with JSON serialization
 - **DeviceInfo**: Device information collection (OS, version, model, brand)
 - **CrashConfig**: Flexible configuration options
@@ -35,8 +57,68 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **CrashReporter**: HTTP-based crash reporting to remote server
 - **CrashReporterKit**: Global manager with simple API
 
-### Documentation
+#### Documentation
+
 - Comprehensive README with usage examples
 - Getting started guide
 - API documentation
 - Example app with UI for testing
+
+---
+
+## 中文
+
+### [1.0.1] - 2026-03-16
+
+#### 新增
+
+- 双语更新日志及索引
+- 通过 GitHub Actions 自动化发布到 pub.dev 的工作流
+- 版本号更新至 1.0.1
+
+#### 变更
+
+- 增强文档结构，支持双语
+
+#### 修复
+
+- 文档改进
+
+### [1.0.0] - 2026-03-08
+
+#### 新增
+
+- 首次发布 crash_reporter_kit
+- 自动崩溃检测和上报
+- 通过 FlutterError.onError 处理 Flutter 错误
+- 通过 PlatformDispatcher.onError 处理平台错误
+- 基于文件的本地崩溃存储
+- 通过 HTTP 上传远程崩溃报告
+- 设备信息收集
+- 应用状态收集
+- 手动崩溃报告
+- 通过 runProtected 进行受保护的代码执行
+- 通过 runZonedGuarded 进行基于 Zone 的错误处理
+- 崩溃报告管理（获取全部、清除全部）
+- 失败上传的自动重试
+- 可配置的崩溃存储限制
+- 调试模式支持
+- 用户 ID 跟踪
+- 应用版本和构建号跟踪
+
+#### 功能
+
+- **CrashReport**: 完整的崩溃报告模型，支持 JSON 序列化
+- **DeviceInfo**: 设备信息收集（操作系统、版本、型号、品牌）
+- **CrashConfig**: 灵活的配置选项
+- **CrashHandler**: 自动崩溃检测和处理
+- **CrashStorage**: 基于文件的本地崩溃持久化
+- **CrashReporter**: 基于 HTTP 的远程崩溃报告
+- **CrashReporterKit**: 具有简单 API 的全局管理器
+
+#### 文档
+
+- 包含使用示例的完整 README
+- 快速入门指南
+- API 文档
+- 带有 UI 的示例应用程序用于测试
