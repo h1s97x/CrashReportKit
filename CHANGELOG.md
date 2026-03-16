@@ -9,6 +9,26 @@
 
 ## English
 
+### [1.0.2] - 2026-03-16
+
+#### Added
+
+- Comprehensive dartdoc comments for all public APIs
+- Detailed documentation for CrashReporterKit class
+- Documentation for CrashReport and DeviceInfo models
+- Documentation for CrashConfig configuration class
+- Documentation for CrashHandler, CrashStorage, and CrashReporter classes
+- Usage examples in dartdoc comments
+
+#### Changed
+
+- Enhanced documentation structure with detailed examples
+- Improved API documentation clarity
+
+#### Fixed
+
+- Documentation completeness for better IDE support
+
 ### [1.0.1] - 2026-03-16
 
 #### Added
@@ -67,6 +87,26 @@
 ---
 
 ## 中文
+
+### [1.0.2] - 2026-03-16
+
+#### 新增
+
+- 为所有公共 API 添加完整的 dartdoc 注释
+- CrashReporterKit 类的详细文档
+- CrashReport 和 DeviceInfo 模型的文档
+- CrashConfig 配置类的文档
+- CrashHandler、CrashStorage 和 CrashReporter 类的文档
+- dartdoc 注释中的使用示例
+
+#### 变更
+
+- 增强文档结构，提供详细示例
+- 改进 API 文档清晰度
+
+#### 修复
+
+- 完善文档以获得更好的 IDE 支持
 
 ### [1.0.1] - 2026-03-16
 
